@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="frameMain" prefHeight="563.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foolish.controller.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="设置">
+          <items>
+            <MenuItem id="menu_setting_proxy" fx:id="menuItemSetProxy" mnemonicParsing="false" onAction="#settingProxy" text="代理" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="417.0" prefWidth="702.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tableData" layoutX="200.0" layoutY="52.0" prefHeight="455.0" prefWidth="684.0">
+              <columns>
+                <TableColumn fx:id="colNo" editable="false" prefWidth="75.0" sortable="false" text="No" />
+                <TableColumn fx:id="colFileName" editable="false" prefWidth="260.0" sortable="false" text="文件名" />
+                  <TableColumn fx:id="colResolution" editable="false" prefWidth="136.0" sortable="false" text="分辨率" />
+                  <TableColumn fx:id="colFileSize" editable="false" prefWidth="106.0" sortable="false" text="文件大小" />
+                  <TableColumn fx:id="colStatus" prefWidth="106.0" text="状态" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txtMainUrl" layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="728.0" />
+            <Button fx:id="btnStart" layoutX="756.0" layoutY="14.0" mnemonicParsing="false" onAction="#onParseStart" prefHeight="23.0" prefWidth="57.0" text="开始" />
+            <Button fx:id="btnStop" layoutX="823.0" layoutY="14.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="57.0" text="停止" />
+            <Label fx:id="labelProgress" layoutX="7.0" layoutY="514.0" prefHeight="15.0" prefWidth="877.0" />
+            <Label layoutX="14.0" layoutY="58.0" text="CollectionName:" />
+            <Label fx:id="labelCollectionName" layoutX="14.0" layoutY="80.0" prefHeight="76.0" prefWidth="174.0" />
+            <Label layoutX="14.0" layoutY="180.0" text="Image Count:" />
+            <Label fx:id="labelImgCount" layoutX="94.0" layoutY="180.0" prefHeight="15.0" prefWidth="95.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
